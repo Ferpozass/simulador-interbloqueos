@@ -1,0 +1,92 @@
+SIMULACION: Escenario 4 - Recuperacion con proceso victima
+Fecha: 06/09/2026 23:15:01
+======================================================================
+[23:15:01] [INICIO  ] Inicio de la simulacion 'Escenario 4 - Recuperacion con proceso victima'.
+[23:15:01] [INICIO  ] Memoria total: 1024 MB. Procesos: 3. Recursos: ['plotter', 'usb_respaldo', 'servidor_bd', 'escaner'].
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:01] [MEMORIA ] Se asignaron 250 MB a RESPALDO. Usada: 250/1024 MB, libre: 774 MB.
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:01] [MEMORIA ] Se asignaron 180 MB a CONSULTA. Usada: 430/1024 MB, libre: 594 MB.
+[23:15:01] [SYSCALL ] DIGITAL solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:01] [MEMORIA ] Se asignaron 120 MB a DIGITAL. Usada: 550/1024 MB, libre: 474 MB.
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'solicitar el recurso 'plotter'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] Se asigno el recurso 'plotter' a RESPALDO. Instancias libres: 0/1.
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'solicitar el recurso 'servidor_bd'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] Se asigno el recurso 'servidor_bd' a CONSULTA. Instancias libres: 0/1.
+[23:15:01] [SYSCALL ] DIGITAL solicita el servicio 'solicitar el recurso 'escaner'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] Se asigno el recurso 'escaner' a DIGITAL. Instancias libres: 0/1.
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'solicitar el recurso 'usb_respaldo'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] Se asigno el recurso 'usb_respaldo' a RESPALDO. Instancias libres: 0/1.
+[23:15:01] [CPU     ] CONSULTA esta trabajando (1/3).
+[23:15:01] [CPU     ] DIGITAL esta trabajando (1/6).
+[23:15:01] [CPU     ] RESPALDO esta trabajando (1/2).
+[23:15:01] [CPU     ] CONSULTA esta trabajando (2/3).
+[23:15:01] [CPU     ] DIGITAL esta trabajando (2/6).
+[23:15:01] [CPU     ] RESPALDO esta trabajando (2/2).
+[23:15:01] [CPU     ] CONSULTA esta trabajando (3/3).
+[23:15:01] [CPU     ] DIGITAL esta trabajando (3/6).
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'solicitar el recurso 'servidor_bd'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'servidor_bd' esta ocupado por ['CONSULTA']. RESPALDO pasa a ESPERANDO.
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'solicitar el recurso 'plotter'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'plotter' esta ocupado por ['RESPALDO']. CONSULTA pasa a ESPERANDO.
+[23:15:01] [CPU     ] DIGITAL esta trabajando (4/6).
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'solicitar el recurso 'servidor_bd'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'servidor_bd' esta ocupado por ['CONSULTA']. RESPALDO pasa a ESPERANDO.
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'solicitar el recurso 'plotter'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'plotter' esta ocupado por ['RESPALDO']. CONSULTA pasa a ESPERANDO.
+[23:15:01] [CPU     ] DIGITAL esta trabajando (5/6).
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'solicitar el recurso 'servidor_bd'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'servidor_bd' esta ocupado por ['CONSULTA']. RESPALDO pasa a ESPERANDO.
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'solicitar el recurso 'plotter'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'plotter' esta ocupado por ['RESPALDO']. CONSULTA pasa a ESPERANDO.
+[23:15:01] [CPU     ] DIGITAL esta trabajando (6/6).
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'solicitar el recurso 'servidor_bd'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'servidor_bd' esta ocupado por ['CONSULTA']. RESPALDO pasa a ESPERANDO.
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'solicitar el recurso 'plotter'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'plotter' esta ocupado por ['RESPALDO']. CONSULTA pasa a ESPERANDO.
+[23:15:01] [SYSCALL ] DIGITAL solicita el servicio 'liberar el recurso 'escaner'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] DIGITAL libero el recurso 'escaner'. Instancias libres: 1/1.
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'solicitar el recurso 'servidor_bd'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'servidor_bd' esta ocupado por ['CONSULTA']. RESPALDO pasa a ESPERANDO.
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'solicitar el recurso 'plotter'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'plotter' esta ocupado por ['RESPALDO']. CONSULTA pasa a ESPERANDO.
+[23:15:01] [SYSCALL ] DIGITAL solicita el servicio 'terminar el proceso' (equivale a exit()) | recorrido: Aplicacion -> Shell -> Kernel
+[23:15:01] [SYSCALL ] DIGITAL solicita el servicio 'liberar memoria' (equivale a free() / exit()) | recorrido: Aplicacion -> Kernel -> Hardware (RAM)
+[23:15:01] [MEMORIA ] Se liberaron 120 MB de DIGITAL. Usada: 430/1024 MB, libre: 594 MB.
+[23:15:01] [PROCESO ] DIGITAL TERMINO (ejecuto la accion terminar).
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'solicitar el recurso 'servidor_bd'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'servidor_bd' esta ocupado por ['CONSULTA']. RESPALDO pasa a ESPERANDO.
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'solicitar el recurso 'plotter'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'plotter' esta ocupado por ['RESPALDO']. CONSULTA pasa a ESPERANDO.
+[23:15:01] [DEADLOCK] INTERBLOQUEO DETECTADO. Ciclo: plotter -> RESPALDO -> servidor_bd -> CONSULTA -> plotter
+[23:15:01] [DEADLOCK] Procesos involucrados: ['RESPALDO', 'CONSULTA'] | Recursos involucrados: ['plotter', 'servidor_bd']
+[23:15:01] [DEADLOCK] Condicion 'Exclusion mutua': SI. Los recursos ['plotter', 'servidor_bd'] no tienen instancias libres y solo pueden usarse por un proceso a la vez.
+[23:15:01] [DEADLOCK] Condicion 'Retencion y espera': SI. Los procesos ['RESPALDO', 'CONSULTA'] conservan recursos mientras piden otro.
+[23:15:01] [DEADLOCK] Condicion 'No expropiacion': SI. Los recursos ['plotter', 'servidor_bd'] estan marcados como no expropiables: solo se liberan cuando el dueno los suelta.
+[23:15:01] [DEADLOCK] Condicion 'Espera circular': SI. El detector encontro el ciclo: plotter -> RESPALDO -> servidor_bd -> CONSULTA -> plotter
+[23:15:01] [ESTRATEGIA] ESTRATEGIA APLICADA: terminacion de victima. Se elige a CONSULTA porque retiene 1 recurso(s) y 180 MB, que es lo menos entre ['RESPALDO', 'CONSULTA'].
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'terminar el proceso' (equivale a exit()) | recorrido: Aplicacion -> Shell -> Kernel
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'liberar el recurso 'servidor_bd'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] CONSULTA libero el recurso 'servidor_bd'. Instancias libres: 1/1.
+[23:15:01] [SYSCALL ] CONSULTA solicita el servicio 'liberar memoria' (equivale a free() / exit()) | recorrido: Aplicacion -> Kernel -> Hardware (RAM)
+[23:15:01] [MEMORIA ] Se liberaron 180 MB de CONSULTA. Usada: 250/1024 MB, libre: 774 MB.
+[23:15:01] [PROCESO ] RESPALDO vuelve a LISTO porque se libero 'servidor_bd'.
+[23:15:01] [PROCESO ] CONSULTA TERMINO (fue terminado por el SO para romper el interbloqueo).
+[23:15:01] [ESTRATEGIA] Se rompio la espera circular. La simulacion continua.
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'solicitar el recurso 'servidor_bd'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] Se asigno el recurso 'servidor_bd' a RESPALDO. Instancias libres: 0/1.
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'escribir en 'planos_laboratorio.dwg'' (equivale a write()) | recorrido: Aplicacion -> Kernel (sistema de archivos) -> Hardware (disco)
+[23:15:01] [ARCHIVO ] RESPALDO escribio en 'planos_laboratorio.dwg' y lo mantiene abierto.
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'cerrar 'planos_laboratorio.dwg'' (equivale a close()) | recorrido: Aplicacion -> Kernel (sistema de archivos)
+[23:15:01] [ARCHIVO ] RESPALDO cerro el archivo 'planos_laboratorio.dwg'.
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'liberar el recurso 'servidor_bd'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] RESPALDO libero el recurso 'servidor_bd'. Instancias libres: 1/1.
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'liberar el recurso 'usb_respaldo'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] RESPALDO libero el recurso 'usb_respaldo'. Instancias libres: 1/1.
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'liberar el recurso 'plotter'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] RESPALDO libero el recurso 'plotter'. Instancias libres: 1/1.
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'terminar el proceso' (equivale a exit()) | recorrido: Aplicacion -> Shell -> Kernel
+[23:15:01] [SYSCALL ] RESPALDO solicita el servicio 'liberar memoria' (equivale a free() / exit()) | recorrido: Aplicacion -> Kernel -> Hardware (RAM)
+[23:15:01] [MEMORIA ] Se liberaron 250 MB de RESPALDO. Usada: 0/1024 MB, libre: 1024 MB.
+[23:15:01] [PROCESO ] RESPALDO TERMINO (ejecuto la accion terminar).
+[23:15:01] [FIN     ] Fin de la simulacion: no quedan procesos por ejecutar.

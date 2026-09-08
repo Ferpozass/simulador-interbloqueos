@@ -1,0 +1,54 @@
+SIMULACION: Escenario 1 - Turno tranquilo en el laboratorio
+Fecha: 06/09/2026 23:15:00
+======================================================================
+[23:15:00] [INICIO  ] Inicio de la simulacion 'Escenario 1 - Turno tranquilo en el laboratorio'.
+[23:15:00] [INICIO  ] Memoria total: 1024 MB. Procesos: 3. Recursos: ['impresora_laser', 'escaner', 'usb_respaldo'].
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se asignaron 180 MB a ALU-01. Usada: 180/1024 MB, libre: 844 MB.
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se asignaron 220 MB a ALU-02. Usada: 400/1024 MB, libre: 624 MB.
+[23:15:00] [SYSCALL ] PROF-01 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se asignaron 150 MB a PROF-01. Usada: 550/1024 MB, libre: 474 MB.
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'leer 'practica_redes.docx'' (equivale a read()) | recorrido: Aplicacion -> Kernel (sistema de archivos) -> Hardware (disco)
+[23:15:00] [ARCHIVO ] ALU-01 leyo el archivo 'practica_redes.docx'.
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'solicitar el recurso 'escaner'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] Se asigno el recurso 'escaner' a ALU-02. Instancias libres: 0/1.
+[23:15:00] [SYSCALL ] PROF-01 solicita el servicio 'solicitar el recurso 'usb_respaldo'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] Se asigno el recurso 'usb_respaldo' a PROF-01. Instancias libres: 1/2.
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] Se asigno el recurso 'impresora_laser' a ALU-01. Instancias libres: 0/1.
+[23:15:00] [CPU     ] ALU-02 esta trabajando (1/2).
+[23:15:00] [SYSCALL ] PROF-01 solicita el servicio 'escribir en 'lista_asistencia.csv'' (equivale a write()) | recorrido: Aplicacion -> Kernel (sistema de archivos) -> Hardware (disco)
+[23:15:00] [ARCHIVO ] PROF-01 escribio en 'lista_asistencia.csv' y lo mantiene abierto.
+[23:15:00] [CPU     ] ALU-01 esta trabajando (1/2).
+[23:15:00] [CPU     ] ALU-02 esta trabajando (2/2).
+[23:15:00] [SYSCALL ] PROF-01 solicita el servicio 'cerrar 'lista_asistencia.csv'' (equivale a close()) | recorrido: Aplicacion -> Kernel (sistema de archivos)
+[23:15:00] [ARCHIVO ] PROF-01 cerro el archivo 'lista_asistencia.csv'.
+[23:15:00] [CPU     ] ALU-01 esta trabajando (2/2).
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'crear el archivo 'tarea_escaneada.pdf'' (equivale a creat() / open(O_CREAT)) | recorrido: Aplicacion -> Shell -> Kernel (sistema de archivos) -> Hardware (disco)
+[23:15:00] [ARCHIVO ] ALU-02 creo el archivo 'tarea_escaneada.pdf'.
+[23:15:00] [SYSCALL ] PROF-01 solicita el servicio 'mover 'lista_asistencia.csv' a 'respaldos_lista_asistencia.csv'' (equivale a rename()) | recorrido: Aplicacion -> Kernel (sistema de archivos) -> Hardware (disco)
+[23:15:00] [ARCHIVO ] PROF-01 movio 'lista_asistencia.csv' a 'respaldos_lista_asistencia.csv'.
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'liberar el recurso 'impresora_laser'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] ALU-01 libero el recurso 'impresora_laser'. Instancias libres: 1/1.
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'escribir en 'tarea_escaneada.pdf'' (equivale a write()) | recorrido: Aplicacion -> Kernel (sistema de archivos) -> Hardware (disco)
+[23:15:00] [ARCHIVO ] ALU-02 escribio en 'tarea_escaneada.pdf' y lo mantiene abierto.
+[23:15:00] [SYSCALL ] PROF-01 solicita el servicio 'liberar el recurso 'usb_respaldo'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] PROF-01 libero el recurso 'usb_respaldo'. Instancias libres: 2/2.
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'terminar el proceso' (equivale a exit()) | recorrido: Aplicacion -> Shell -> Kernel
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'liberar memoria' (equivale a free() / exit()) | recorrido: Aplicacion -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se liberaron 180 MB de ALU-01. Usada: 370/1024 MB, libre: 654 MB.
+[23:15:00] [PROCESO ] ALU-01 TERMINO (ejecuto la accion terminar).
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'cerrar 'tarea_escaneada.pdf'' (equivale a close()) | recorrido: Aplicacion -> Kernel (sistema de archivos)
+[23:15:00] [ARCHIVO ] ALU-02 cerro el archivo 'tarea_escaneada.pdf'.
+[23:15:00] [SYSCALL ] PROF-01 solicita el servicio 'terminar el proceso' (equivale a exit()) | recorrido: Aplicacion -> Shell -> Kernel
+[23:15:00] [SYSCALL ] PROF-01 solicita el servicio 'liberar memoria' (equivale a free() / exit()) | recorrido: Aplicacion -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se liberaron 150 MB de PROF-01. Usada: 220/1024 MB, libre: 804 MB.
+[23:15:00] [PROCESO ] PROF-01 TERMINO (ejecuto la accion terminar).
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'liberar el recurso 'escaner'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] ALU-02 libero el recurso 'escaner'. Instancias libres: 1/1.
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'terminar el proceso' (equivale a exit()) | recorrido: Aplicacion -> Shell -> Kernel
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'liberar memoria' (equivale a free() / exit()) | recorrido: Aplicacion -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se liberaron 220 MB de ALU-02. Usada: 0/1024 MB, libre: 1024 MB.
+[23:15:00] [PROCESO ] ALU-02 TERMINO (ejecuto la accion terminar).
+[23:15:00] [FIN     ] Fin de la simulacion: no quedan procesos por ejecutar.

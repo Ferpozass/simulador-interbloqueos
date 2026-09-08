@@ -1,0 +1,97 @@
+SIMULACION: Escenario 2 - Cola en la impresora
+Fecha: 06/09/2026 23:15:00
+======================================================================
+[23:15:00] [INICIO  ] Inicio de la simulacion 'Escenario 2 - Cola en la impresora'.
+[23:15:00] [INICIO  ] Memoria total: 512 MB. Procesos: 4. Recursos: ['impresora_laser', 'escaner'].
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se asignaron 120 MB a ALU-01. Usada: 120/512 MB, libre: 392 MB.
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se asignaron 120 MB a ALU-02. Usada: 240/512 MB, libre: 272 MB.
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se asignaron 100 MB a ALU-03. Usada: 340/512 MB, libre: 172 MB.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] ALU-04 pidio 300 MB y solo hay 172 MB libres: se queda esperando memoria.
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] Se asigno el recurso 'impresora_laser' a ALU-01. Instancias libres: 0/1.
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-01']. ALU-02 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-01']. ALU-03 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] ALU-04 pidio 300 MB y solo hay 172 MB libres: se queda esperando memoria.
+[23:15:00] [CPU     ] ALU-01 esta trabajando (1/3).
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-01']. ALU-02 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-01']. ALU-03 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] ALU-04 pidio 300 MB y solo hay 172 MB libres: se queda esperando memoria.
+[23:15:00] [CPU     ] ALU-01 esta trabajando (2/3).
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-01']. ALU-02 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-01']. ALU-03 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] ALU-04 pidio 300 MB y solo hay 172 MB libres: se queda esperando memoria.
+[23:15:00] [CPU     ] ALU-01 esta trabajando (3/3).
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-01']. ALU-02 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-01']. ALU-03 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] ALU-04 pidio 300 MB y solo hay 172 MB libres: se queda esperando memoria.
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'liberar el recurso 'impresora_laser'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] ALU-01 libero el recurso 'impresora_laser'. Instancias libres: 1/1.
+[23:15:00] [PROCESO ] ALU-02 vuelve a LISTO porque se libero 'impresora_laser'.
+[23:15:00] [PROCESO ] ALU-03 vuelve a LISTO porque se libero 'impresora_laser'.
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] Se asigno el recurso 'impresora_laser' a ALU-02. Instancias libres: 0/1.
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-02']. ALU-03 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] ALU-04 pidio 300 MB y solo hay 172 MB libres: se queda esperando memoria.
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'terminar el proceso' (equivale a exit()) | recorrido: Aplicacion -> Shell -> Kernel
+[23:15:00] [SYSCALL ] ALU-01 solicita el servicio 'liberar memoria' (equivale a free() / exit()) | recorrido: Aplicacion -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se liberaron 120 MB de ALU-01. Usada: 220/512 MB, libre: 292 MB.
+[23:15:00] [PROCESO ] ALU-01 TERMINO (ejecuto la accion terminar).
+[23:15:00] [CPU     ] ALU-02 esta trabajando (1/2).
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-02']. ALU-03 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] ALU-04 pidio 300 MB y solo hay 292 MB libres: se queda esperando memoria.
+[23:15:00] [CPU     ] ALU-02 esta trabajando (2/2).
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['ALU-02']. ALU-03 pasa a ESPERANDO.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] ALU-04 pidio 300 MB y solo hay 292 MB libres: se queda esperando memoria.
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'liberar el recurso 'impresora_laser'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] ALU-02 libero el recurso 'impresora_laser'. Instancias libres: 1/1.
+[23:15:00] [PROCESO ] ALU-03 vuelve a LISTO porque se libero 'impresora_laser'.
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] Se asigno el recurso 'impresora_laser' a ALU-03. Instancias libres: 0/1.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] ALU-04 pidio 300 MB y solo hay 292 MB libres: se queda esperando memoria.
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'terminar el proceso' (equivale a exit()) | recorrido: Aplicacion -> Shell -> Kernel
+[23:15:00] [SYSCALL ] ALU-02 solicita el servicio 'liberar memoria' (equivale a free() / exit()) | recorrido: Aplicacion -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se liberaron 120 MB de ALU-02. Usada: 100/512 MB, libre: 412 MB.
+[23:15:00] [PROCESO ] ALU-02 TERMINO (ejecuto la accion terminar).
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'leer 'reporte_final.pdf'' (equivale a read()) | recorrido: Aplicacion -> Kernel (sistema de archivos) -> Hardware (disco)
+[23:15:00] [ARCHIVO ] ALU-03 leyo el archivo 'reporte_final.pdf'.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se asignaron 300 MB a ALU-04. Usada: 400/512 MB, libre: 112 MB.
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'liberar el recurso 'impresora_laser'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] ALU-03 libero el recurso 'impresora_laser'. Instancias libres: 1/1.
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'solicitar el recurso 'escaner'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] Se asigno el recurso 'escaner' a ALU-04. Instancias libres: 0/1.
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'terminar el proceso' (equivale a exit()) | recorrido: Aplicacion -> Shell -> Kernel
+[23:15:00] [SYSCALL ] ALU-03 solicita el servicio 'liberar memoria' (equivale a free() / exit()) | recorrido: Aplicacion -> Kernel -> Hardware (RAM)
+[23:15:00] [MEMORIA ] Se liberaron 100 MB de ALU-03. Usada: 300/512 MB, libre: 212 MB.
+[23:15:00] [PROCESO ] ALU-03 TERMINO (ejecuto la accion terminar).
+[23:15:00] [CPU     ] ALU-04 esta trabajando (1/1).
+[23:15:00] [SYSCALL ] ALU-04 solicita el servicio 'liberar el recurso 'escaner'' (equivale a close() / release()) | recorrido: Aplicacion -> Kernel (driver) -> Hardware
+[23:15:00] [RECURSO ] ALU-04 libero el recurso 'escaner'. Instancias libres: 1/1.
+[23:15:01] [SYSCALL ] ALU-04 solicita el servicio 'terminar el proceso' (equivale a exit()) | recorrido: Aplicacion -> Shell -> Kernel
+[23:15:01] [SYSCALL ] ALU-04 solicita el servicio 'liberar memoria' (equivale a free() / exit()) | recorrido: Aplicacion -> Kernel -> Hardware (RAM)
+[23:15:01] [MEMORIA ] Se liberaron 300 MB de ALU-04. Usada: 0/512 MB, libre: 512 MB.
+[23:15:01] [PROCESO ] ALU-04 TERMINO (ejecuto la accion terminar).
+[23:15:01] [FIN     ] Fin de la simulacion: no quedan procesos por ejecutar.

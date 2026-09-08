@@ -1,0 +1,31 @@
+SIMULACION: Escenario 3 - Interbloqueo entre escaner e impresora
+Fecha: 06/09/2026 23:15:01
+======================================================================
+[23:15:01] [INICIO  ] Inicio de la simulacion 'Escenario 3 - Interbloqueo entre escaner e impresora'.
+[23:15:01] [INICIO  ] Memoria total: 1024 MB. Procesos: 2. Recursos: ['escaner', 'impresora_laser'].
+[23:15:01] [SYSCALL ] COPIADO solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:01] [MEMORIA ] Se asignaron 200 MB a COPIADO. Usada: 200/1024 MB, libre: 824 MB.
+[23:15:01] [SYSCALL ] PORTADA solicita el servicio 'solicitar memoria' (equivale a malloc() / brk()) | recorrido: Aplicacion -> Shell -> Kernel -> Hardware (RAM)
+[23:15:01] [MEMORIA ] Se asignaron 200 MB a PORTADA. Usada: 400/1024 MB, libre: 624 MB.
+[23:15:01] [SYSCALL ] COPIADO solicita el servicio 'solicitar el recurso 'escaner'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] Se asigno el recurso 'escaner' a COPIADO. Instancias libres: 0/1.
+[23:15:01] [SYSCALL ] PORTADA solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] Se asigno el recurso 'impresora_laser' a PORTADA. Instancias libres: 0/1.
+[23:15:01] [CPU     ] COPIADO esta trabajando (1/2).
+[23:15:01] [CPU     ] PORTADA esta trabajando (1/2).
+[23:15:01] [CPU     ] COPIADO esta trabajando (2/2).
+[23:15:01] [CPU     ] PORTADA esta trabajando (2/2).
+[23:15:01] [SYSCALL ] COPIADO solicita el servicio 'solicitar el recurso 'impresora_laser'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'impresora_laser' esta ocupado por ['PORTADA']. COPIADO pasa a ESPERANDO.
+[23:15:01] [SYSCALL ] PORTADA solicita el servicio 'solicitar el recurso 'escaner'' (equivale a ioctl() / open() sobre un dispositivo) | recorrido: Aplicacion -> Shell -> Kernel (driver) -> Hardware
+[23:15:01] [RECURSO ] El recurso 'escaner' esta ocupado por ['COPIADO']. PORTADA pasa a ESPERANDO.
+[23:15:01] [DEADLOCK] INTERBLOQUEO DETECTADO. Ciclo: escaner -> COPIADO -> impresora_laser -> PORTADA -> escaner
+[23:15:01] [DEADLOCK] Procesos involucrados: ['COPIADO', 'PORTADA'] | Recursos involucrados: ['escaner', 'impresora_laser']
+[23:15:01] [DEADLOCK] Condicion 'Exclusion mutua': SI. Los recursos ['escaner', 'impresora_laser'] no tienen instancias libres y solo pueden usarse por un proceso a la vez.
+[23:15:01] [DEADLOCK] Condicion 'Retencion y espera': SI. Los procesos ['COPIADO', 'PORTADA'] conservan recursos mientras piden otro.
+[23:15:01] [DEADLOCK] Condicion 'No expropiacion': SI. Los recursos ['escaner', 'impresora_laser'] estan marcados como no expropiables: solo se liberan cuando el dueno los suelta.
+[23:15:01] [DEADLOCK] Condicion 'Espera circular': SI. El detector encontro el ciclo: escaner -> COPIADO -> impresora_laser -> PORTADA -> escaner
+[23:15:01] [DEADLOCK] El escenario pidio NO resolver automaticamente: los procesos del ciclo se quedan bloqueados para poder observar el interbloqueo.
+[23:15:01] [PROCESO ] COPIADO pasa a BLOQUEADO: espera 'impresora_laser' y nadie lo va a liberar.
+[23:15:01] [PROCESO ] PORTADA pasa a BLOQUEADO: espera 'escaner' y nadie lo va a liberar.
+[23:15:01] [FIN     ] Fin de la simulacion: ya nadie puede avanzar.
