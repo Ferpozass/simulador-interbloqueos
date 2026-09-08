@@ -1,0 +1,23 @@
+# Archivos que genera Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Entornos virtuales, por si alguien del equipo usa uno
+venv/
+.venv/
+env/
+
+# Configuracion de editores
+.vscode/
+.idea/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# NOTA: las carpetas logs/ y graficas/ SI se suben, porque los logs de
+# ejemplo y las graficas son parte de los entregables del proyecto.
+
+# Grafo de conocimiento generado por graphify (se regenera con /graphify)
+graphify-out/
