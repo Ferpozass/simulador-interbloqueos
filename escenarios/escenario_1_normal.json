@@ -1,0 +1,58 @@
+{
+  "nombre": "Escenario 1 - Turno tranquilo en el laboratorio",
+  "descripcion": "Tres alumnos usan el laboratorio en momentos distintos. Cada uno pide lo que necesita, lo usa y lo suelta antes de que otro lo pida, por eso nadie espera y nadie se bloquea.",
+  "memoria_total": 1024,
+  "recursos": [
+    { "id": "impresora_laser", "tipo": "dispositivo", "instancias": 1, "expropiable": false },
+    { "id": "escaner", "tipo": "dispositivo", "instancias": 1, "expropiable": false },
+    { "id": "usb_respaldo", "tipo": "dispositivo", "instancias": 2, "expropiable": false }
+  ],
+  "archivos": [
+    { "nombre": "practica_redes.docx" },
+    { "nombre": "lista_asistencia.csv" }
+  ],
+  "procesos": [
+    {
+      "pid": "ALU-01",
+      "nombre": "Imprimir practica",
+      "memoria": 180,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "leer_archivo", "archivo": "practica_redes.docx" },
+        { "tipo": "solicitar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "trabajar", "pasos": 2 },
+        { "tipo": "liberar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "ALU-02",
+      "nombre": "Digitalizar tarea",
+      "memoria": 220,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "escaner" },
+        { "tipo": "trabajar", "pasos": 2 },
+        { "tipo": "crear_archivo", "archivo": "tarea_escaneada.pdf" },
+        { "tipo": "escribir_archivo", "archivo": "tarea_escaneada.pdf" },
+        { "tipo": "cerrar_archivo", "archivo": "tarea_escaneada.pdf" },
+        { "tipo": "liberar_recurso", "recurso": "escaner" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "PROF-01",
+      "nombre": "Respaldar lista",
+      "memoria": 150,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "usb_respaldo" },
+        { "tipo": "escribir_archivo", "archivo": "lista_asistencia.csv" },
+        { "tipo": "cerrar_archivo", "archivo": "lista_asistencia.csv" },
+        { "tipo": "mover_archivo", "archivo": "lista_asistencia.csv", "destino": "respaldos_lista_asistencia.csv" },
+        { "tipo": "liberar_recurso", "recurso": "usb_respaldo" },
+        { "tipo": "terminar" }
+      ]
+    }
+  ]
+}

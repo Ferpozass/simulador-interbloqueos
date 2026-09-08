@@ -1,0 +1,62 @@
+{
+  "nombre": "Escenario 2 - Cola en la impresora",
+  "descripcion": "Tres procesos quieren la misma impresora y ademas hay uno que pide mas memoria de la que hay libre al principio. Todos tienen que esperar su turno, pero como nadie retiene un recurso que otro necesite para siempre, al final los cuatro terminan. Es espera, no interbloqueo.",
+  "memoria_total": 512,
+  "recursos": [
+    { "id": "impresora_laser", "tipo": "dispositivo", "instancias": 1, "expropiable": false },
+    { "id": "escaner", "tipo": "dispositivo", "instancias": 1, "expropiable": false }
+  ],
+  "archivos": [
+    { "nombre": "reporte_final.pdf" }
+  ],
+  "procesos": [
+    {
+      "pid": "ALU-01",
+      "nombre": "Imprime primero",
+      "memoria": 120,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "trabajar", "pasos": 3 },
+        { "tipo": "liberar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "ALU-02",
+      "nombre": "Espera la impresora",
+      "memoria": 120,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "trabajar", "pasos": 2 },
+        { "tipo": "liberar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "ALU-03",
+      "nombre": "Tambien espera la impresora",
+      "memoria": 100,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "leer_archivo", "archivo": "reporte_final.pdf" },
+        { "tipo": "liberar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "ALU-04",
+      "nombre": "Pide mucha memoria",
+      "memoria": 300,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "escaner" },
+        { "tipo": "trabajar", "pasos": 1 },
+        { "tipo": "liberar_recurso", "recurso": "escaner" },
+        { "tipo": "terminar" }
+      ]
+    }
+  ]
+}

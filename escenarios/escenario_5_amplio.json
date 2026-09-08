@@ -1,0 +1,119 @@
+{
+  "nombre": "Escenario 5 - Dia de entregas en el laboratorio",
+  "descripcion": "Siete procesos, cinco tipos de recursos (dos de ellos con varias instancias) y varios archivos. Tres procesos forman un ciclo de tres, que es mas dificil que el ciclo de dos del escenario 3, y los demas siguen trabajando en paralelo. Sirve para demostrar que la deteccion no depende de un caso chiquito ni de nombres fijos.",
+  "memoria_total": 2048,
+  "recursos": [
+    { "id": "impresora_laser", "tipo": "dispositivo", "instancias": 1, "expropiable": false },
+    { "id": "escaner", "tipo": "dispositivo", "instancias": 1, "expropiable": false },
+    { "id": "plotter", "tipo": "dispositivo", "instancias": 1, "expropiable": false },
+    { "id": "usb_respaldo", "tipo": "dispositivo", "instancias": 2, "expropiable": false },
+    { "id": "servidor_bd", "tipo": "generico", "instancias": 2, "expropiable": false }
+  ],
+  "archivos": [
+    { "nombre": "kardex.csv" },
+    { "nombre": "manual_practicas.pdf" },
+    { "nombre": "bitacora_lab.txt" }
+  ],
+  "procesos": [
+    {
+      "pid": "TESIS-A",
+      "nombre": "Imprime y luego quiere escanear",
+      "memoria": 300,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "trabajar", "pasos": 3 },
+        { "tipo": "solicitar_recurso", "recurso": "escaner" },
+        { "tipo": "trabajar", "pasos": 1 },
+        { "tipo": "liberar_recurso", "recurso": "escaner" },
+        { "tipo": "liberar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "TESIS-B",
+      "nombre": "Escanea y luego quiere el plotter",
+      "memoria": 280,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "escaner" },
+        { "tipo": "trabajar", "pasos": 3 },
+        { "tipo": "solicitar_recurso", "recurso": "plotter" },
+        { "tipo": "trabajar", "pasos": 1 },
+        { "tipo": "liberar_recurso", "recurso": "plotter" },
+        { "tipo": "liberar_recurso", "recurso": "escaner" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "TESIS-C",
+      "nombre": "Usa el plotter y luego quiere la impresora",
+      "memoria": 260,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "plotter" },
+        { "tipo": "trabajar", "pasos": 3 },
+        { "tipo": "solicitar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "trabajar", "pasos": 1 },
+        { "tipo": "liberar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "liberar_recurso", "recurso": "plotter" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "CONTROL",
+      "nombre": "Actualiza kardex en el servidor",
+      "memoria": 200,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "servidor_bd" },
+        { "tipo": "escribir_archivo", "archivo": "kardex.csv" },
+        { "tipo": "trabajar", "pasos": 2 },
+        { "tipo": "cerrar_archivo", "archivo": "kardex.csv" },
+        { "tipo": "liberar_recurso", "recurso": "servidor_bd" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "CONSULTA",
+      "nombre": "Solo consulta el servidor",
+      "memoria": 150,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "servidor_bd" },
+        { "tipo": "leer_archivo", "archivo": "manual_practicas.pdf" },
+        { "tipo": "trabajar", "pasos": 2 },
+        { "tipo": "liberar_recurso", "recurso": "servidor_bd" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "RESPALDO-1",
+      "nombre": "Respalda en una USB",
+      "memoria": 180,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "usb_respaldo" },
+        { "tipo": "escribir_archivo", "archivo": "bitacora_lab.txt" },
+        { "tipo": "cerrar_archivo", "archivo": "bitacora_lab.txt" },
+        { "tipo": "liberar_recurso", "recurso": "usb_respaldo" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "RESPALDO-2",
+      "nombre": "Respalda en la otra USB y limpia archivos",
+      "memoria": 180,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "usb_respaldo" },
+        { "tipo": "crear_archivo", "archivo": "copia_semanal.zip" },
+        { "tipo": "escribir_archivo", "archivo": "copia_semanal.zip" },
+        { "tipo": "cerrar_archivo", "archivo": "copia_semanal.zip" },
+        { "tipo": "mover_archivo", "archivo": "copia_semanal.zip", "destino": "respaldos_copia_semanal.zip" },
+        { "tipo": "liberar_recurso", "recurso": "usb_respaldo" },
+        { "tipo": "terminar" }
+      ]
+    }
+  ]
+}

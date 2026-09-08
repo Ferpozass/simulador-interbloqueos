@@ -1,0 +1,61 @@
+{
+  "nombre": "Escenario 4 - Recuperacion con proceso victima",
+  "descripcion": "Se provoca un interbloqueo a proposito entre dos procesos, pero uno retiene dos recursos y el otro solo uno. La estrategia del equipo elige como victima al que menos retiene (CONSULTA), lo termina, libera lo suyo y con eso el otro proceso puede seguir y terminar bien. Ademas hay un tercer proceso ajeno al ciclo para comprobar que la simulacion continua.",
+  "memoria_total": 1024,
+  "recursos": [
+    { "id": "plotter", "tipo": "dispositivo", "instancias": 1, "expropiable": false },
+    { "id": "usb_respaldo", "tipo": "dispositivo", "instancias": 1, "expropiable": false },
+    { "id": "servidor_bd", "tipo": "generico", "instancias": 1, "expropiable": false },
+    { "id": "escaner", "tipo": "dispositivo", "instancias": 1, "expropiable": false }
+  ],
+  "archivos": [
+    { "nombre": "planos_laboratorio.dwg" }
+  ],
+  "procesos": [
+    {
+      "pid": "RESPALDO",
+      "nombre": "Respalda planos (retiene dos recursos)",
+      "memoria": 250,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "plotter" },
+        { "tipo": "solicitar_recurso", "recurso": "usb_respaldo" },
+        { "tipo": "trabajar", "pasos": 2 },
+        { "tipo": "solicitar_recurso", "recurso": "servidor_bd" },
+        { "tipo": "escribir_archivo", "archivo": "planos_laboratorio.dwg" },
+        { "tipo": "cerrar_archivo", "archivo": "planos_laboratorio.dwg" },
+        { "tipo": "liberar_recurso", "recurso": "servidor_bd" },
+        { "tipo": "liberar_recurso", "recurso": "usb_respaldo" },
+        { "tipo": "liberar_recurso", "recurso": "plotter" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "CONSULTA",
+      "nombre": "Consulta la base y quiere el plotter (retiene uno)",
+      "memoria": 180,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "servidor_bd" },
+        { "tipo": "trabajar", "pasos": 3 },
+        { "tipo": "solicitar_recurso", "recurso": "plotter" },
+        { "tipo": "trabajar", "pasos": 1 },
+        { "tipo": "liberar_recurso", "recurso": "plotter" },
+        { "tipo": "liberar_recurso", "recurso": "servidor_bd" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "DIGITAL",
+      "nombre": "Proceso ajeno al ciclo",
+      "memoria": 120,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "escaner" },
+        { "tipo": "trabajar", "pasos": 6 },
+        { "tipo": "liberar_recurso", "recurso": "escaner" },
+        { "tipo": "terminar" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "nombre": "Escenario 3 - Interbloqueo entre escaner e impresora",
+  "descripcion": "Dos procesos piden los mismos dos dispositivos pero en orden contrario. Uno agarra el escaner y luego quiere la impresora; el otro agarra la impresora y luego quiere el escaner. Ninguno suelta lo que ya tiene, asi que se quedan atorados para siempre. El detector debe encontrar la espera circular solo.",
+  "resolver_automaticamente": false,
+  "memoria_total": 1024,
+  "recursos": [
+    { "id": "escaner", "tipo": "dispositivo", "instancias": 1, "expropiable": false },
+    { "id": "impresora_laser", "tipo": "dispositivo", "instancias": 1, "expropiable": false }
+  ],
+  "archivos": [],
+  "procesos": [
+    {
+      "pid": "COPIADO",
+      "nombre": "Escanea y luego imprime",
+      "memoria": 200,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "escaner" },
+        { "tipo": "trabajar", "pasos": 2 },
+        { "tipo": "solicitar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "trabajar", "pasos": 1 },
+        { "tipo": "liberar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "liberar_recurso", "recurso": "escaner" },
+        { "tipo": "terminar" }
+      ]
+    },
+    {
+      "pid": "PORTADA",
+      "nombre": "Imprime y luego escanea",
+      "memoria": 200,
+      "acciones": [
+        { "tipo": "solicitar_memoria" },
+        { "tipo": "solicitar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "trabajar", "pasos": 2 },
+        { "tipo": "solicitar_recurso", "recurso": "escaner" },
+        { "tipo": "trabajar", "pasos": 1 },
+        { "tipo": "liberar_recurso", "recurso": "escaner" },
+        { "tipo": "liberar_recurso", "recurso": "impresora_laser" },
+        { "tipo": "terminar" }
+      ]
+    }
+  ]
+}
