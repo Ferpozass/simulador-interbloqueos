@@ -19,7 +19,7 @@ cuenta, revisa cuáles de las cuatro condiciones de Coffman se cumplen, lo dibuj
 como grafo y aplica una estrategia de recuperación para que la simulación pueda
 continuar.
 
-## Cómo instalarloo
+## Cómo instalarlo
 
 Se necesita Python 3.9 o más nuevo.
 
