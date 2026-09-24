@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 ## Cómo ejecutarlo
 
-Desde la carpeta del proyecto:
+Desde la carpeta del proyecto
 
 ```
 python main.py
