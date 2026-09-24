@@ -10,7 +10,7 @@ Docente: Guadalupe Hernández
 
 ---
 
-## Qué hace
+## Qué hacee
 
 Simula cómo un sistema operativo administra memoria, archivos, dispositivos y
 recursos compartidos entre varios procesos. Cuando los procesos se quedan
